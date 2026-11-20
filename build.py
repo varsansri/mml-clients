@@ -47,6 +47,33 @@ HEAD = {
     "Lotus Property Developers": ("2–3 BHK", "homes in Coimbatore"),
 }
 
+# yearly sales in ₹ crore: (number, how we know, "filed" = reported, "est" = our rough estimate, source)
+# Only brands with a reasoned basis of about ₹10 cr+ get a money line; smaller ones keep their size fact.
+MONEY = {
+    "CRI Pumps": (2000, "group sales, from a trade directory (GST band ₹500 cr+ for the pumps company alone)", "est",
+                  "https://www.industrialautomationindia.in/directory/cri-pumps-pvt-ltd"),
+    "Salzer": (1418, "revenue FY2025, stock-exchange filing", "filed",
+               "https://stockanalysis.com/quote/nse/SALZERELEC/revenue/"),
+    "Shree Kumaran Thangamaligai": (989, "KTM Jewellery group income FY2024, ICRA rating report", "filed",
+                                    "https://www.icra.in/Rating/GetRationalReportFilePdf?id=133316"),
+    "Anamalais Toyota": (600, "about $74M a year, RocketReach estimate", "est",
+                         "https://rocketreach.co/answers/what-is-the-annual-revenue-of-anaamalais-toyota_b47f82c7fc4b5eb0"),
+    "Ramakrishna Pain Institute": (500, "1,000 beds × about ₹50 lakh a bed a year (our estimate for the hospital)", "est", None),
+    "Anjappar": (200, "50+ restaurants × about ₹4 cr each a year (our estimate, all outlets)", "est", None),
+    "Karpagam": (200, "two big gold showrooms (our rough estimate)", "est", None),
+    "Darmona Premium Tea": (150, "about $18M a year, 201–500 staff, ZoomInfo estimate", "est",
+                            "https://www.zoominfo.com/c/darmona-tea/358889797"),
+    "Hystan Spinning Mills": (50, "spinning mill with 101–500 staff (our rough estimate)", "est", None),
+    "oodu implementers": (25, "under $5M a year, ZoomInfo estimate", "est",
+                          "https://www.zoominfo.com/c/oodu-implementers/541064975"),
+    "VLB Janakiammal College": (20, "fees of an autonomous arts and science college (our rough estimate)", "est", None),
+    "Astral": (15, "100+ professionals (our rough estimate)", "est", None),
+    "Covai Anganan": (15, "5+ biriyani outlets (our rough estimate)", "est", None),
+    "Cyclecount": (10, "200+ staff across India (our rough estimate)", "est", None),
+}
+
+def crore(n): return f"₹{n:,} cr"
+
 IND = {
     "food": "Food & drink", "industrial-b2b": "Industry", "education": "Education",
     "real-estate": "Real estate", "jewellery": "Jewellery", "fashion-textile": "Fashion & textile",
@@ -104,6 +131,15 @@ assert not missing, missing
 def card(name):
     f, w = facts[name], work[name]
     big, lab = HEAD.get(name, ("", ""))
+    money = ""
+    if name in MONEY:
+        n, basis, kind, msrc = MONEY[name]
+        if msrc and msrc not in f["sources"]: f["sources"].append(msrc)
+        badge = "reported" if kind == "filed" else "estimate"
+        money = (f'<p class="money"><b>{"" if kind == "filed" else "~"}{esc(crore(n))}</b> <span>a year in sales</span>'
+                 f'<em class="{kind}">{badge}</em><small>{esc(basis)}</small></p>')
+        if big == crore(n) or "revenue" in lab: big, lab = "", ""
+    size = f'<p class="big"><b>{esc(big)}</b> <span>{esc(lab)}</span></p>' if big else ""
     cats = " · ".join(CAT.get(c, c) for c, _ in w["cats"].most_common())
     li = "".join(f"<li>{esc(x)}</li>" for x in f["facts"])
     src = " ".join(f'<a href="{esc(s)}" rel="noopener" target="_blank">{i+1}</a>'
@@ -115,7 +151,7 @@ def card(name):
   <div class="body">
     <p class="tag">{esc(IND.get(w["ind"], w["ind"]))}</p>
     <h3>{esc(NICE.get(name, name))}</h3>
-    <p class="big"><b>{esc(big)}</b> <span>{esc(lab)}</span></p>
+    {money}{size}
     <ul>{li}</ul>
     <p class="did"><span>We did</span> {esc(cats)} <em>({w["n"]} project{"s" if w["n"] > 1 else ""})</em></p>
     <p class="src">Sources {src}</p>
@@ -123,7 +159,9 @@ def card(name):
 </article>'''
 
 # order: biggest names first (the HEAD order), then the rest with facts
-order = [c for c in HEAD if c in facts] + [c for c in facts if c not in HEAD]
+order = sorted(MONEY, key=lambda c: -MONEY[c][0])
+order += [c for c in HEAD if c in facts and c not in order] + [c for c in facts if c not in HEAD and c not in order]
+total_sales = sum(v[0] for v in MONEY.values())
 cards = "\n".join(card(c) for c in order)
 
 rest = [n for n in work if n not in facts]
@@ -142,7 +180,8 @@ total_projects = sum(w["n"] for w in work.values())
 page = (HERE / "template.html").read_text(encoding="utf-8")
 page = (page.replace("{{CARDS}}", cards).replace("{{REST}}", rest_html).replace("{{CHIPS}}", chips)
             .replace("{{N_FACTS}}", str(len(order))).replace("{{N_CLIENTS}}", str(len(work)))
-            .replace("{{N_PROJECTS}}", str(total_projects)).replace("{{N_REST}}", str(len(rest))))
+            .replace("{{N_PROJECTS}}", str(total_projects))
+            .replace("{{TOTAL_SALES}}", f"{(total_sales // 1000) * 1000:,}").replace("{{N_MONEY}}", str(len(MONEY))).replace("{{N_REST}}", str(len(rest))))
 (HERE / "index.html").write_text(page, encoding="utf-8")
 
 # impact sheet for the team: one row per brand, only real numbers go in
@@ -153,6 +192,7 @@ with open(HERE / "impact.csv", "w", newline="", encoding="utf-8-sig") as fh:
     for n in order + rest:
         w = work[n]
         size = " ".join(HEAD.get(n, ("", ""))).strip()
+        if n in MONEY: size = f"{crore(MONEY[n][0])} a year ({MONEY[n][2]}); {size}"
         wr.writerow([NICE.get(n, n), IND.get(w["ind"], w["ind"]), w["n"],
                      ", ".join(CAT.get(c, c) for c in w["cats"]), size, "", ""])
 print(len(order), "brands with facts;", len(rest), "others;", len(work), "clients;", total_projects, "projects")

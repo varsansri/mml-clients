@@ -55,6 +55,14 @@ h3{margin-top:8px;font-size:22px;font-weight:800;line-height:1.2;letter-spacing:
 .big{margin-top:18px;display:flex;flex-direction:column;gap:6px}
 .big b{font-weight:300;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
 .big span{font-size:15px;color:var(--ink-2)}
+.money{margin-top:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.money b{font-weight:300;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+.money span{font-size:15px;color:var(--ink)}
+.money em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line);color:var(--ink-3)}
+.money em.filed{border-color:var(--accent);color:var(--accent)}
+.money small{flex-basis:100%;font-size:13px;line-height:1.45;color:var(--ink-3)}
+.money+.big{margin-top:14px}
+.money+.big b{font-size:28px;color:var(--ink)}
 .card ul{list-style:none;margin-top:20px;display:grid;gap:8px;font-size:15px;line-height:1.45;color:var(--ink-2)}
 .card li{padding-left:16px;position:relative}
 .card li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--ink-3)}
@@ -89,39 +97,61 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 <header class="wrap">
   <p class="eyebrow">Mi Media Labs · Coimbatore · since 2012</p>
   <h1>Who we <b>work for.</b></h1>
-  <p class="lede">179 brands, 324 projects. Some are family kitchens, some sell in 120 countries. Here is how big the brands behind our work are, in their own public numbers.</p>
+  <p class="lede">179 brands, 324 projects. Some are family kitchens, some sell in 120 countries. Here is roughly how much the brands behind our work sell in a year.</p>
   <dl class="proof">
-    <div><dd>₹1,418 cr</dd><dt><b>Salzer Electronics</b>, listed on the NSE: yearly revenue</dt></div>
+    <div><dd>~₹6,000 cr</dd><dt>a year in sales, <b>14 of our clients</b> together (rough estimate)</dt></div>
+    <div><dd>₹1,418 cr</dd><dt><b>Salzer Electronics</b>, listed on the NSE: revenue FY2025</dt></div>
+    <div><dd>₹989 cr</dd><dt><b>Sree Kumaran Thangamaligai</b> group: income FY2024</dt></div>
     <div><dd>120</dd><dt><b>CRI Pumps</b>: countries that sell its pumps</dt></div>
-    <div><dd>1,000</dd><dt><b>Sri Ramakrishna Hospital</b>: beds</dt></div>
-    <div><dd>50+</dd><dt><b>Anjappar</b>: restaurants around the world</dt></div>
   </dl>
 </header>
 
-<nav class="bar" aria-label="Filter by industry"><div class="wrap"><div class="chips"><button class="chip on" data-f="all">All <span>32</span></button><button class="chip" data-f="industrial-b2b">Industry <span>7</span></button><button class="chip" data-f="food">Food &amp; drink <span>7</span></button><button class="chip" data-f="education">Education <span>3</span></button><button class="chip" data-f="real-estate">Real estate <span>3</span></button><button class="chip" data-f="professional-services">Services <span>3</span></button><button class="chip" data-f="healthcare">Healthcare <span>2</span></button><button class="chip" data-f="jewellery">Jewellery <span>2</span></button><button class="chip" data-f="beauty-wellness">Beauty &amp; wellness <span>2</span></button><button class="chip" data-f="fashion-textile">Fashion &amp; textile <span>2</span></button><button class="chip" data-f="hospitality">Hospitality <span>1</span></button></div></div></nav>
+<nav class="bar" aria-label="Filter by industry"><div class="wrap"><div class="chips"><button class="chip on" data-f="all">All <span>32</span></button><button class="chip" data-f="industrial-b2b">Industry <span>7</span></button><button class="chip" data-f="food">Food &amp; drink <span>7</span></button><button class="chip" data-f="professional-services">Services <span>3</span></button><button class="chip" data-f="education">Education <span>3</span></button><button class="chip" data-f="real-estate">Real estate <span>3</span></button><button class="chip" data-f="jewellery">Jewellery <span>2</span></button><button class="chip" data-f="healthcare">Healthcare <span>2</span></button><button class="chip" data-f="fashion-textile">Fashion &amp; textile <span>2</span></button><button class="chip" data-f="beauty-wellness">Beauty &amp; wellness <span>2</span></button><button class="chip" data-f="hospitality">Hospitality <span>1</span></button></div></div></nav>
 
 <main class="wrap">
   <section class="grid" id="grid" aria-label="Clients with public numbers">
-<article class="card" data-ind="industrial-b2b">
-  <a class="shot" href="https://www.mimedialabs.com/product-Packaging-and-Design-Companies" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/product_16-12-19/4.jpg" alt="Salzer Electronics: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Industry</p>
-    <h3>Salzer Electronics</h3>
-    <p class="big"><b>₹1,418 cr</b> <span>revenue, FY2025 · listed on NSE</span></p>
-    <ul><li>Listed on NSE and BSE (SALZERELEC)</li><li>Revenue ₹1,418 crore in FY2025 (+21.6%)</li><li>924 employees (March 2025)</li></ul>
-    <p class="did"><span>We did</span> Packaging · Branding <em>(4 projects)</em></p>
-    <p class="src">Sources <a href="https://stockanalysis.com/quote/nse/SALZERELEC/revenue/" rel="noopener" target="_blank">1</a> <a href="https://stockanalysis.com/quote/nse/SALZERELEC/employees/" rel="noopener" target="_blank">2</a></p>
-  </div>
-</article>
 <article class="card" data-ind="industrial-b2b">
   <a class="shot" href="https://www.mimedialabs.com/best-business-flyer-maker-in-coimbatore" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/product_10-08-19/A4-Paper-Sheet-Mockup.jpg" alt="CRI Pumps: our work" loading="lazy"></a>
   <div class="body">
     <p class="tag">Industry</p>
     <h3>CRI Pumps</h3>
-    <p class="big"><b>120</b> <span>countries sell its pumps</span></p>
+    <p class="money"><b>~₹2,000 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>group sales, from a trade directory (GST band ₹500 cr+ for the pumps company alone)</small></p><p class="big"><b>120</b> <span>countries sell its pumps</span></p>
     <ul><li>Pump maker from Coimbatore</li><li>Sold in about 120 countries through 20,000 outlets</li><li>21 factories; 1,500 service centres; subsidiaries in the US, Spain, Italy, Brazil, China and more</li></ul>
     <p class="did"><span>We did</span> Branding <em>(2 projects)</em></p>
-    <p class="src">Sources <a href="https://www.crigroups.com/?p=9" rel="noopener" target="_blank">1</a> <a href="https://www.business-standard.com/article/pti-stories/c-r-i-pumps-sets-up-facility-in-us-119070800859_1.html" rel="noopener" target="_blank">2</a></p>
+    <p class="src">Sources <a href="https://www.crigroups.com/?p=9" rel="noopener" target="_blank">1</a> <a href="https://www.business-standard.com/article/pti-stories/c-r-i-pumps-sets-up-facility-in-us-119070800859_1.html" rel="noopener" target="_blank">2</a> <a href="https://www.industrialautomationindia.in/directory/cri-pumps-pvt-ltd" rel="noopener" target="_blank">3</a></p>
+  </div>
+</article>
+<article class="card" data-ind="industrial-b2b">
+  <a class="shot" href="https://www.mimedialabs.com/product-Packaging-and-Design-Companies" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/product_16-12-19/4.jpg" alt="Salzer Electronics: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Industry</p>
+    <h3>Salzer Electronics</h3>
+    <p class="money"><b>₹1,418 cr</b> <span>a year in sales</span><em class="filed">reported</em><small>revenue FY2025, stock-exchange filing</small></p>
+    <ul><li>Listed on NSE and BSE (SALZERELEC)</li><li>Revenue ₹1,418 crore in FY2025 (+21.6%)</li><li>924 employees (March 2025)</li></ul>
+    <p class="did"><span>We did</span> Packaging · Branding <em>(4 projects)</em></p>
+    <p class="src">Sources <a href="https://stockanalysis.com/quote/nse/SALZERELEC/revenue/" rel="noopener" target="_blank">1</a> <a href="https://stockanalysis.com/quote/nse/SALZERELEC/employees/" rel="noopener" target="_blank">2</a></p>
+  </div>
+</article>
+<article class="card" data-ind="jewellery">
+  <a class="shot" href="https://www.mimedialabs.com/mothers-day-poster-shree-kumaran-thangamaligai" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile55/Display.jpg" alt="Shree Kumaran Thangamaligai: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Jewellery</p>
+    <h3>Shree Kumaran Thangamaligai</h3>
+    <p class="money"><b>₹989 cr</b> <span>a year in sales</span><em class="filed">reported</em><small>KTM Jewellery group income FY2024, ICRA rating report</small></p><p class="big"><b>7</b> <span>cities with showrooms</span></p>
+    <ul><li>Showrooms in 7 cities: Tiruppur, Coimbatore, Erode, Trichy, Karur, Tirunelveli, Chennai</li><li>Says it was the first BIS-certified jeweller in Tamil Nadu</li><li>Makes its own jewellery at KTM Jewellery Ltd</li></ul>
+    <p class="did"><span>We did</span> Branding · Brochure <em>(9 projects)</em></p>
+    <p class="src">Sources <a href="https://www.tnprivatejobs.tn.gov.in/candidate/Home/employer_profile_single/2220410170916679" rel="noopener" target="_blank">1</a> <a href="https://www.icra.in/Rating/GetRationalReportFilePdf?id=133316" rel="noopener" target="_blank">2</a></p>
+  </div>
+</article>
+<article class="card" data-ind="industrial-b2b">
+  <a class="shot" href="https://www.mimedialabs.com/invitation-design-anamalais-toyota" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile72/Invitation1.jpg" alt="Anamalais Toyota: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Industry</p>
+    <h3>Anamalais Toyota</h3>
+    <p class="money"><b>~₹600 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>about $74M a year, RocketReach estimate</small></p><p class="big"><b>3</b> <span>districts: Coimbatore, Tiruppur, Erode</span></p>
+    <ul><li>Toyota dealer for Coimbatore, Tiruppur and Erode</li><li>Showrooms and service centres in 5+ locations</li></ul>
+    <p class="did"><span>We did</span> Branding <em>(1 project)</em></p>
+    <p class="src">Sources <a href="https://www.cardekho.com/Toyota/Coimbatore/cardealers" rel="noopener" target="_blank">1</a> <a href="https://www.91wheels.com/car-dealers/toyota/coimbatore" rel="noopener" target="_blank">2</a> <a href="https://rocketreach.co/answers/what-is-the-annual-revenue-of-anaamalais-toyota_b47f82c7fc4b5eb0" rel="noopener" target="_blank">3</a></p>
   </div>
 </article>
 <article class="card" data-ind="healthcare">
@@ -129,7 +159,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <div class="body">
     <p class="tag">Healthcare</p>
     <h3>Sri Ramakrishna Pain Institute</h3>
-    <p class="big"><b>1,000</b> <span>beds at Sri Ramakrishna Hospital</span></p>
+    <p class="money"><b>~₹500 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>1,000 beds × about ₹50 lakh a bed a year (our estimate for the hospital)</small></p><p class="big"><b>1,000</b> <span>beds at Sri Ramakrishna Hospital</span></p>
     <ul><li>Pain clinic of Sri Ramakrishna Hospital, Coimbatore</li><li>Hospital founded 1975, about 1,000 beds</li><li>Run by the SNR Sons Charitable Trust</li></ul>
     <p class="did"><span>We did</span> Branding · Brochure <em>(8 projects)</em></p>
     <p class="src">Sources <a href="https://en.wikipedia.org/wiki/Sri_Ramakrishna_Hospital" rel="noopener" target="_blank">1</a> <a href="https://www.sriramakrishnahospital.com/majordepartment/pain-management/" rel="noopener" target="_blank">2</a></p>
@@ -140,43 +170,10 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <div class="body">
     <p class="tag">Food &amp; drink</p>
     <h3>Anjappar</h3>
-    <p class="big"><b>50+</b> <span>restaurants worldwide</span></p>
+    <p class="money"><b>~₹200 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>50+ restaurants × about ₹4 cr each a year (our estimate, all outlets)</small></p><p class="big"><b>50+</b> <span>restaurants worldwide</span></p>
     <ul><li>Chettinad restaurant chain started in Chennai</li><li>50+ outlets worldwide; 30+ in Chennai</li><li>Branches in Singapore, Malaysia, Sri Lanka, Canada, USA, Australia, Qatar</li><li>Started in Chennai in 1964</li></ul>
     <p class="did"><span>We did</span> Website · Brochure <em>(4 projects)</em></p>
     <p class="src">Sources <a href="https://en.wikipedia.org/wiki/Anjappar_Chettinad_Restaurant" rel="noopener" target="_blank">1</a> <a href="https://theindiansun.com.au/anjappar-opens-rowville-melbourne" rel="noopener" target="_blank">2</a> <a href="https://www.anjappargrand.com/" rel="noopener" target="_blank">3</a></p>
-  </div>
-</article>
-<article class="card" data-ind="food">
-  <a class="shot" href="https://www.mimedialabs.com/high-resolution-food-website-design" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/anganan.jpg" alt="Covai Anganan: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Food &amp; drink</p>
-    <h3>Covai Anganan</h3>
-    <p class="big"><b>1926</b> <span>first biriyani served</span></p>
-    <ul><li>Biriyani house since 1926</li><li>5+ outlets in Coimbatore: R.S. Puram, Race Course, Ganapathy, Thudiyalur, Kavundampalayam</li><li>Original Coimbatore biriyani recipe, four generations</li></ul>
-    <p class="did"><span>We did</span> Website · Branding · Digital marketing <em>(3 projects)</em></p>
-    <p class="src">Sources <a href="https://www.swiggy.com/city/coimbatore/covai-anganan-biriyani-house-since-1926-race-course-rest437497" rel="noopener" target="_blank">1</a> <a href="https://www.covaiangananbiriyani.com/" rel="noopener" target="_blank">2</a></p>
-  </div>
-</article>
-<article class="card" data-ind="food">
-  <a class="shot" href="https://www.mimedialabs.com/darmona-package" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile99/darmona_package.jpg" alt="Darmona Premium Tea: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Food &amp; drink</p>
-    <h3>Darmona Premium Tea</h3>
-    <p class="big"><b>1984</b> <span>single-estate tea since</span></p>
-    <ul><li>Tea estate brand from Kotagiri, the Nilgiris</li><li>Runs Canaan Cafe outlets in Coimbatore with ASK kiosks (2018)</li><li>Single-estate tea, hand-picked since 1984</li><li>Says its estate is now 100% solar and zero carbon</li></ul>
-    <p class="did"><span>We did</span> Packaging · Branding · Brochure · Website <em>(12 projects)</em></p>
-    <p class="src">Sources <a href="https://www.business-standard.com/article/pti-stories/another-canaan-cafe-opens-in-coimbatore-118102501047_1.html" rel="noopener" target="_blank">1</a> <a href="https://www.zoominfo.com/c/darmona-tea/358889797" rel="noopener" target="_blank">2</a> <a href="https://www.darmonatea.com/" rel="noopener" target="_blank">3</a></p>
-  </div>
-</article>
-<article class="card" data-ind="jewellery">
-  <a class="shot" href="https://www.mimedialabs.com/mothers-day-poster-shree-kumaran-thangamaligai" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile55/Display.jpg" alt="Shree Kumaran Thangamaligai: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Jewellery</p>
-    <h3>Shree Kumaran Thangamaligai</h3>
-    <p class="big"><b>7</b> <span>cities with showrooms</span></p>
-    <ul><li>Showrooms in 7 cities: Tiruppur, Coimbatore, Erode, Trichy, Karur, Tirunelveli, Chennai</li><li>Says it was the first BIS-certified jeweller in Tamil Nadu</li><li>Makes its own jewellery at KTM Jewellery Ltd</li></ul>
-    <p class="did"><span>We did</span> Branding · Brochure <em>(9 projects)</em></p>
-    <p class="src">Sources <a href="https://www.tnprivatejobs.tn.gov.in/candidate/Home/employer_profile_single/2220410170916679" rel="noopener" target="_blank">1</a></p>
   </div>
 </article>
 <article class="card" data-ind="jewellery">
@@ -184,10 +181,87 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <div class="body">
     <p class="tag">Jewellery</p>
     <h3>Karpagam Jewellers</h3>
-    <p class="big"><b>1971</b> <span>jewellers since</span></p>
+    <p class="money"><b>~₹200 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>two big gold showrooms (our rough estimate)</small></p><p class="big"><b>1971</b> <span>jewellers since</span></p>
     <ul><li>Jewellers since 1971 (Karpagam Aabarna Maligai)</li><li>Showrooms in Coimbatore and Mumbai</li></ul>
     <p class="did"><span>We did</span> Digital marketing <em>(2 projects)</em></p>
     <p class="src">Sources <a href="https://www.franchiseindia.com/brands/karpagam-jewellers.35693" rel="noopener" target="_blank">1</a> <a href="https://www.indianjeweller.in/Indian-Jewellery-News/11298/index.html" rel="noopener" target="_blank">2</a></p>
+  </div>
+</article>
+<article class="card" data-ind="food">
+  <a class="shot" href="https://www.mimedialabs.com/darmona-package" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile99/darmona_package.jpg" alt="Darmona Premium Tea: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Food &amp; drink</p>
+    <h3>Darmona Premium Tea</h3>
+    <p class="money"><b>~₹150 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>about $18M a year, 201–500 staff, ZoomInfo estimate</small></p><p class="big"><b>1984</b> <span>single-estate tea since</span></p>
+    <ul><li>Tea estate brand from Kotagiri, the Nilgiris</li><li>Runs Canaan Cafe outlets in Coimbatore with ASK kiosks (2018)</li><li>Single-estate tea, hand-picked since 1984</li><li>Says its estate is now 100% solar and zero carbon</li></ul>
+    <p class="did"><span>We did</span> Packaging · Branding · Brochure · Website <em>(12 projects)</em></p>
+    <p class="src">Sources <a href="https://www.business-standard.com/article/pti-stories/another-canaan-cafe-opens-in-coimbatore-118102501047_1.html" rel="noopener" target="_blank">1</a> <a href="https://www.zoominfo.com/c/darmona-tea/358889797" rel="noopener" target="_blank">2</a> <a href="https://www.darmonatea.com/" rel="noopener" target="_blank">3</a></p>
+  </div>
+</article>
+<article class="card" data-ind="fashion-textile">
+  <a class="shot" href="https://www.mimedialabs.com/logo-design-hystan-spinning-mills" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile92/O6AA9F1.jpg" alt="Hystan Spinning Mills: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Fashion &amp; textile</p>
+    <h3>Hystan Spinning Mills</h3>
+    <p class="money"><b>~₹50 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>spinning mill with 101–500 staff (our rough estimate)</small></p><p class="big"><b>101–500</b> <span>people on staff</span></p>
+    <ul><li>Yarn spinning mill in Udumalpet, Tiruppur district, since 2008</li><li>101 to 500 staff</li></ul>
+    <p class="did"><span>We did</span> Logo <em>(1 project)</em></p>
+    <p class="src">Sources <a href="https://www.textileinfomedia.com/Hystan-Spinning-Mills-Chennai-Pvt-Ltd" rel="noopener" target="_blank">1</a></p>
+  </div>
+</article>
+<article class="card" data-ind="professional-services">
+  <a class="shot" href="https://www.mimedialabs.com/best-website-layout-designing-agency" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile-23-04-19/OI.jpg" alt="Oodu Implementers: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Services</p>
+    <h3>Oodu Implementers</h3>
+    <p class="money"><b>~₹25 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>under $5M a year, ZoomInfo estimate</small></p><p class="big"><b>100+</b> <span>Odoo enterprise projects</span></p>
+    <ul><li>India&#x27;s first certified Odoo Gold Partner</li><li>Odoo-only since 2010; 100+ enterprise projects</li><li>Odoo Best Partner Award 2023</li></ul>
+    <p class="did"><span>We did</span> Website <em>(1 project)</em></p>
+    <p class="src">Sources <a href="https://www.odooimplementers.com/" rel="noopener" target="_blank">1</a> <a href="https://www.zoominfo.com/c/oodu-implementers/541064975" rel="noopener" target="_blank">2</a></p>
+  </div>
+</article>
+<article class="card" data-ind="education">
+  <a class="shot" href="https://www.mimedialabs.com/best-web-development-company-coimbatore" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/client/VLB college.jpeg" alt="VLB Janakiammal College: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Education</p>
+    <h3>VLB Janakiammal College</h3>
+    <p class="money"><b>~₹20 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>fees of an autonomous arts and science college (our rough estimate)</small></p><p class="big"><b>1991</b> <span>college since · NAAC B++</span></p>
+    <ul><li>Arts and science college in Coimbatore since 1991</li><li>Autonomous since 2011; NAAC B++ grade</li><li>Affiliated to Bharathiar University</li></ul>
+    <p class="did"><span>We did</span> Website · Branding <em>(2 projects)</em></p>
+    <p class="src">Sources <a href="https://www.careers360.com/colleges/vlb-janakiammal-college-of-arts-and-science-coimbatore" rel="noopener" target="_blank">1</a> <a href="https://www.vlbjcas.ac.in/about-college" rel="noopener" target="_blank">2</a></p>
+  </div>
+</article>
+<article class="card" data-ind="professional-services">
+  <a class="shot" href="https://www.mimedialabs.com/custom-paper-bag-with-logo" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/portfolio_14_02_20/Coverbagastral_1-01.jpg" alt="Astral Business Consulting: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Services</p>
+    <h3>Astral Business Consulting</h3>
+    <p class="money"><b>~₹15 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>100+ professionals (our rough estimate)</small></p><p class="big"><b>200+</b> <span>client companies</span></p>
+    <ul><li>Audit and consulting firm, Coimbatore and Chennai</li><li>200+ client companies across 25+ industries</li><li>100+ professionals; 40 associate offices across India</li></ul>
+    <p class="did"><span>We did</span> Packaging · Brochure · Branding · Website <em>(6 projects)</em></p>
+    <p class="src">Sources <a href="https://www.astralbusinessconsulting.com/" rel="noopener" target="_blank">1</a></p>
+  </div>
+</article>
+<article class="card" data-ind="food">
+  <a class="shot" href="https://www.mimedialabs.com/high-resolution-food-website-design" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/anganan.jpg" alt="Covai Anganan: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Food &amp; drink</p>
+    <h3>Covai Anganan</h3>
+    <p class="money"><b>~₹15 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>5+ biriyani outlets (our rough estimate)</small></p><p class="big"><b>1926</b> <span>first biriyani served</span></p>
+    <ul><li>Biriyani house since 1926</li><li>5+ outlets in Coimbatore: R.S. Puram, Race Course, Ganapathy, Thudiyalur, Kavundampalayam</li><li>Original Coimbatore biriyani recipe, four generations</li></ul>
+    <p class="did"><span>We did</span> Website · Branding · Digital marketing <em>(3 projects)</em></p>
+    <p class="src">Sources <a href="https://www.swiggy.com/city/coimbatore/covai-anganan-biriyani-house-since-1926-race-course-rest437497" rel="noopener" target="_blank">1</a> <a href="https://www.covaiangananbiriyani.com/" rel="noopener" target="_blank">2</a></p>
+  </div>
+</article>
+<article class="card" data-ind="industrial-b2b">
+  <a class="shot" href="https://www.mimedialabs.com/Next-gen-finance-website-design." target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/Cyclecount..jpeg" alt="Cyclecount: our work" loading="lazy"></a>
+  <div class="body">
+    <p class="tag">Industry</p>
+    <h3>Cyclecount</h3>
+    <p class="money"><b>~₹10 cr</b> <span>a year in sales</span><em class="est">estimate</em><small>200+ staff across India (our rough estimate)</small></p><p class="big"><b>600</b> <span>locations audited across India</span></p>
+    <ul><li>Stock and fixed-asset audits across India</li><li>200+ people, covering 600 locations</li></ul>
+    <p class="did"><span>We did</span> Website <em>(1 project)</em></p>
+    <p class="src">Sources <a href="https://cyclecount.in/" rel="noopener" target="_blank">1</a></p>
   </div>
 </article>
 <article class="card" data-ind="education">
@@ -199,17 +273,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <ul><li>Coimbatore school since 1967</li><li>Run by the Congregation of Mother of Carmel</li></ul>
     <p class="did"><span>We did</span> Branding · Logo <em>(3 projects)</em></p>
     <p class="src">Sources <a href="https://en.wikipedia.org/wiki/Avila_Convent" rel="noopener" target="_blank">1</a></p>
-  </div>
-</article>
-<article class="card" data-ind="education">
-  <a class="shot" href="https://www.mimedialabs.com/best-web-development-company-coimbatore" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/client/VLB college.jpeg" alt="VLB Janakiammal College: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Education</p>
-    <h3>VLB Janakiammal College</h3>
-    <p class="big"><b>1991</b> <span>college since · NAAC B++</span></p>
-    <ul><li>Arts and science college in Coimbatore since 1991</li><li>Autonomous since 2011; NAAC B++ grade</li><li>Affiliated to Bharathiar University</li></ul>
-    <p class="did"><span>We did</span> Website · Branding <em>(2 projects)</em></p>
-    <p class="src">Sources <a href="https://www.careers360.com/colleges/vlb-janakiammal-college-of-arts-and-science-coimbatore" rel="noopener" target="_blank">1</a> <a href="https://www.vlbjcas.ac.in/about-college" rel="noopener" target="_blank">2</a></p>
   </div>
 </article>
 <article class="card" data-ind="real-estate">
@@ -234,28 +297,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <p class="src">Sources <a href="https://www.covaipost.com/coimbatore/yi-coimbatore-chapter-gets-best-chapter-2015-award/" rel="noopener" target="_blank">1</a> <a href="https://www.businessminutes.in/2025/09/yi-coimbatore-organizes-9th-edition-of-x-factor.html" rel="noopener" target="_blank">2</a></p>
   </div>
 </article>
-<article class="card" data-ind="professional-services">
-  <a class="shot" href="https://www.mimedialabs.com/custom-paper-bag-with-logo" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/portfolio_14_02_20/Coverbagastral_1-01.jpg" alt="Astral Business Consulting: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Services</p>
-    <h3>Astral Business Consulting</h3>
-    <p class="big"><b>200+</b> <span>client companies</span></p>
-    <ul><li>Audit and consulting firm, Coimbatore and Chennai</li><li>200+ client companies across 25+ industries</li><li>100+ professionals; 40 associate offices across India</li></ul>
-    <p class="did"><span>We did</span> Packaging · Brochure · Branding · Website <em>(6 projects)</em></p>
-    <p class="src">Sources <a href="https://www.astralbusinessconsulting.com/" rel="noopener" target="_blank">1</a></p>
-  </div>
-</article>
-<article class="card" data-ind="industrial-b2b">
-  <a class="shot" href="https://www.mimedialabs.com/Next-gen-finance-website-design." target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/Cyclecount..jpeg" alt="Cyclecount: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Industry</p>
-    <h3>Cyclecount</h3>
-    <p class="big"><b>600</b> <span>locations audited across India</span></p>
-    <ul><li>Stock and fixed-asset audits across India</li><li>200+ people, covering 600 locations</li></ul>
-    <p class="did"><span>We did</span> Website <em>(1 project)</em></p>
-    <p class="src">Sources <a href="https://cyclecount.in/" rel="noopener" target="_blank">1</a></p>
-  </div>
-</article>
 <article class="card" data-ind="healthcare">
   <a class="shot" href="https://www.mimedialabs.com/Best-Patient-Centric-Web-Design-Agency" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/latchelp.jpg" alt="Latchelp: our work" loading="lazy"></a>
   <div class="body">
@@ -265,17 +306,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <ul><li>Online lactation and new-mother counselling across India</li><li>8,000+ babies, 16,000+ mothers, 260+ classes</li><li>10+ years of experience</li></ul>
     <p class="did"><span>We did</span> Website <em>(1 project)</em></p>
     <p class="src">Sources <a href="https://latchelp.com/" rel="noopener" target="_blank">1</a></p>
-  </div>
-</article>
-<article class="card" data-ind="professional-services">
-  <a class="shot" href="https://www.mimedialabs.com/best-website-layout-designing-agency" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile-23-04-19/OI.jpg" alt="Oodu Implementers: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Services</p>
-    <h3>Oodu Implementers</h3>
-    <p class="big"><b>100+</b> <span>Odoo enterprise projects</span></p>
-    <ul><li>India&#x27;s first certified Odoo Gold Partner</li><li>Odoo-only since 2010; 100+ enterprise projects</li><li>Odoo Best Partner Award 2023</li></ul>
-    <p class="did"><span>We did</span> Website <em>(1 project)</em></p>
-    <p class="src">Sources <a href="https://www.odooimplementers.com/" rel="noopener" target="_blank">1</a></p>
   </div>
 </article>
 <article class="card" data-ind="industrial-b2b">
@@ -300,17 +330,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <p class="src">Sources <a href="https://www.franchiseindia.com/insights/en/article/toni-guy-essensuals-adds-another-franchise-salon-to-its-kitty.46210" rel="noopener" target="_blank">1</a></p>
   </div>
 </article>
-<article class="card" data-ind="industrial-b2b">
-  <a class="shot" href="https://www.mimedialabs.com/invitation-design-anamalais-toyota" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile72/Invitation1.jpg" alt="Anamalais Toyota: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Industry</p>
-    <h3>Anamalais Toyota</h3>
-    <p class="big"><b>3</b> <span>districts: Coimbatore, Tiruppur, Erode</span></p>
-    <ul><li>Toyota dealer for Coimbatore, Tiruppur and Erode</li><li>Showrooms and service centres in 5+ locations</li></ul>
-    <p class="did"><span>We did</span> Branding <em>(1 project)</em></p>
-    <p class="src">Sources <a href="https://www.cardekho.com/Toyota/Coimbatore/cardealers" rel="noopener" target="_blank">1</a> <a href="https://www.91wheels.com/car-dealers/toyota/coimbatore" rel="noopener" target="_blank">2</a></p>
-  </div>
-</article>
 <article class="card" data-ind="professional-services">
   <a class="shot" href="https://www.mimedialabs.com/logo-design-acta-international-private-limited" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile/Profile95220170913-145829.jpg" alt="ACTA: our work" loading="lazy"></a>
   <div class="body">
@@ -331,17 +350,6 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <ul><li>ERP audit division of Astral Business Consulting, Coimbatore</li><li>Audits SAP, Oracle, Dynamics 365, Infor LN and Odoo, across India</li><li>Team with 30+ years of experience</li></ul>
     <p class="did"><span>We did</span> Website <em>(1 project)</em></p>
     <p class="src">Sources <a href="https://erp-audit.com/" rel="noopener" target="_blank">1</a></p>
-  </div>
-</article>
-<article class="card" data-ind="fashion-textile">
-  <a class="shot" href="https://www.mimedialabs.com/logo-design-hystan-spinning-mills" target="_blank" rel="noopener"><img src="https://www.mimedialabs.com/image/catalog/product/profile92/O6AA9F1.jpg" alt="Hystan Spinning Mills: our work" loading="lazy"></a>
-  <div class="body">
-    <p class="tag">Fashion &amp; textile</p>
-    <h3>Hystan Spinning Mills</h3>
-    <p class="big"><b>101–500</b> <span>people on staff</span></p>
-    <ul><li>Yarn spinning mill in Udumalpet, Tiruppur district, since 2008</li><li>101 to 500 staff</li></ul>
-    <p class="did"><span>We did</span> Logo <em>(1 project)</em></p>
-    <p class="src">Sources <a href="https://www.textileinfomedia.com/Hystan-Spinning-Mills-Chennai-Pvt-Ltd" rel="noopener" target="_blank">1</a></p>
   </div>
 </article>
 <article class="card" data-ind="real-estate">
@@ -466,7 +474,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 </section>
 
 <footer class="wrap">
-  Every number above is public and linked to its source; we wrote none of them. Our own results for each brand are being collected from our team and will be added only with the client's OK.
+  Sales marked "reported" come from filings and rating reports. Sales marked "estimate" are rough: from data sites (ZoomInfo, RocketReach, trade directories) or worked out from public facts like beds, outlets and staff, and the basis is shown on each card. Every other number is public and linked to its source. Our own results for each brand are being collected from our team and will be added only with the client's OK.
   · <a href="https://www.mimedialabs.com/">mimedialabs.com</a>
 </footer>
 

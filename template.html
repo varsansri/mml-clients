@@ -55,6 +55,14 @@ h3{margin-top:8px;font-size:22px;font-weight:800;line-height:1.2;letter-spacing:
 .big{margin-top:18px;display:flex;flex-direction:column;gap:6px}
 .big b{font-weight:300;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
 .big span{font-size:15px;color:var(--ink-2)}
+.money{margin-top:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.money b{font-weight:300;font-size:48px;line-height:1;letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums}
+.money span{font-size:15px;color:var(--ink)}
+.money em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line);color:var(--ink-3)}
+.money em.filed{border-color:var(--accent);color:var(--accent)}
+.money small{flex-basis:100%;font-size:13px;line-height:1.45;color:var(--ink-3)}
+.money+.big{margin-top:14px}
+.money+.big b{font-size:28px;color:var(--ink)}
 .card ul{list-style:none;margin-top:20px;display:grid;gap:8px;font-size:15px;line-height:1.45;color:var(--ink-2)}
 .card li{padding-left:16px;position:relative}
 .card li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--ink-3)}
@@ -89,12 +97,12 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 <header class="wrap">
   <p class="eyebrow">Mi Media Labs · Coimbatore · since 2012</p>
   <h1>Who we <b>work for.</b></h1>
-  <p class="lede">{{N_CLIENTS}} brands, {{N_PROJECTS}} projects. Some are family kitchens, some sell in 120 countries. Here is how big the brands behind our work are, in their own public numbers.</p>
+  <p class="lede">{{N_CLIENTS}} brands, {{N_PROJECTS}} projects. Some are family kitchens, some sell in 120 countries. Here is roughly how much the brands behind our work sell in a year.</p>
   <dl class="proof">
-    <div><dd>₹1,418 cr</dd><dt><b>Salzer Electronics</b>, listed on the NSE: yearly revenue</dt></div>
+    <div><dd>~₹{{TOTAL_SALES}} cr</dd><dt>a year in sales, <b>{{N_MONEY}} of our clients</b> together (rough estimate)</dt></div>
+    <div><dd>₹1,418 cr</dd><dt><b>Salzer Electronics</b>, listed on the NSE: revenue FY2025</dt></div>
+    <div><dd>₹989 cr</dd><dt><b>Sree Kumaran Thangamaligai</b> group: income FY2024</dt></div>
     <div><dd>120</dd><dt><b>CRI Pumps</b>: countries that sell its pumps</dt></div>
-    <div><dd>1,000</dd><dt><b>Sri Ramakrishna Hospital</b>: beds</dt></div>
-    <div><dd>50+</dd><dt><b>Anjappar</b>: restaurants around the world</dt></div>
   </dl>
 </header>
 
@@ -115,7 +123,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 </section>
 
 <footer class="wrap">
-  Every number above is public and linked to its source; we wrote none of them. Our own results for each brand are being collected from our team and will be added only with the client's OK.
+  Sales marked "reported" come from filings and rating reports. Sales marked "estimate" are rough: from data sites (ZoomInfo, RocketReach, trade directories) or worked out from public facts like beds, outlets and staff, and the basis is shown on each card. Every other number is public and linked to its source. Our own results for each brand are being collected from our team and will be added only with the client's OK.
   · <a href="https://www.mimedialabs.com/">mimedialabs.com</a>
 </footer>
 
